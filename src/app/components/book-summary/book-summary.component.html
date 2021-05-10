@@ -1,0 +1,10 @@
+<li *ngIf="bookItems.length>0" class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Kitaplığınız
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li *ngFor="let bookItem of bookItems"><a class ="dropdown-item" ><span class="badge bg-secondary">{{bookItem.quantity}}</span>{{bookItem.book.bookName}}</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" >Kitaplığa Git</a></li>
+  </ul>
+</li>

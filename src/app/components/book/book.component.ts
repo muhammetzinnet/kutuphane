@@ -3,6 +3,8 @@ import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { LibraryService } from 'src/app/services/library.service';
 
 
 @Component({
@@ -16,13 +18,16 @@ export class BookComponent implements OnInit {
   dataLoaded=false;
   filterText="";
 
-  constructor(private bookService:BookService, private activatedRoute:ActivatedRoute) {}
+  constructor(private bookService:BookService, private activatedRoute:ActivatedRoute, private toastrService:ToastrService,
+    private libraryService:LibraryService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       if(params['categoryId']){
         this.getBooksByCategory(params['categoryId'])
+
       }else{
+
         this.getBooks()
       }
     })
@@ -41,5 +46,14 @@ export class BookComponent implements OnInit {
       this.books = response.data;
       this.dataLoaded=true;
     });
+  }
+
+  addLendPerson(book:Book){
+    if(book.bookId==book.bookId){
+      this.toastrService.success("Aynı kitaptan birdaha eklenemez");
+    }else{
+    this.toastrService.success("Kitap kişiye verildi",book.bookName);
+    this.libraryService.addToBook(book);
+  }
   }
 }

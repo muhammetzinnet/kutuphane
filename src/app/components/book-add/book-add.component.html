@@ -1,0 +1,62 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Kitap Ekle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="bookAddForm">
+          <div class="mb-3">
+            <label for="categoryId">Kategori Adı</label>
+            <div class="form-group">
+              <input type="number" id="categoryId" formControlName="categoryId" class="form-control"
+                placeholder="kategori">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="kindName">Kitap Türü</label>
+            <div class="form-group">
+              <input type="text" id="kindName" formControlName="kindName" class="form-control" placeholder="kitap türü">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="book">Kitap Adı</label>
+            <div class="form-group">
+              <input type="text" id="bookName" formControlName="bookName" class="form-control" placeholder="kitap adı">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="author">Kitabın Yazarı</label>
+            <div class="form-group">
+              <input type="text" id="author" formControlName="author" class="form-control" placeholder="yazar adı">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="publisher">Yayın Evi</label>
+            <div class="form-group">
+              <input type="text" id="publisher" formControlName="publisher" class="form-control"
+                placeholder="yayın evi">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="yearOfPrinting">Kitabın Basım Tarihi</label>
+            <div class="form-group">
+              <input type="date" id="yearOfPrinting" formControlName="yearOfPrinting" class="form-control"
+                placeholder="yayın tarihi">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description">Açıklama</label>
+            <div class="form-group">
+              <input type="text" id="description" formControlName="description" class="form-control"
+                placeholder="açıklama">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-info" (click)="add()">Ekle</button>
+      </div>
+    </div>
+  </div>
+</div>

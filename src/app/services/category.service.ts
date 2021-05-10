@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,17 @@ export class CategoryService {
 
   getCategories(): Observable<ListResponseModel<Category>> {
     return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl);
+  }
+
+  add(category:Category):Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "categories/add",category);
+  }
+
+  delete(category:Category):Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "categories/delete", category);
+  }
+
+  update(category:Category):Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "categories/update", category);
   }
 }
