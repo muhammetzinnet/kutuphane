@@ -46,6 +46,13 @@
             </div>
           </div>
           <div class="mb-3">
+            <label for="piece">Kitap Adedi</label>
+            <div class="form-group">
+              <input type="text" id="piece" formControlName="piece" class="form-control"
+                placeholder="kitap adedi">
+            </div>
+          </div>
+          <div class="mb-3">
             <label for="description">Açıklama</label>
             <div class="form-group">
               <input type="text" id="description" formControlName="description" class="form-control"
@@ -54,8 +61,8 @@
           </div>
         </form>
       </div>
-      <div class="card-footer">
-        <button type="button" class="btn btn-info" (click)="add()">Ekle</button>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-info" (click)="add()"><h6>EKLE</h6></button>
       </div>
     </div>
   </div>

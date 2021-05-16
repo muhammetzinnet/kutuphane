@@ -1,0 +1,80 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Kitap güncelle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="bookUpdateForm">
+          <div class="mb-3">
+            <label for="id"><b>Kitap Id</b></label>
+            <input type="number" id="id" formControlName="id" class="form-control" [(ngModel)]="bookId" />
+          </div>
+          <div class="mb-3">
+            <label for="bookName">Kitap adı</label>
+            <div class="form-group">
+              <input type="text" id="bookName" formControlName="bookName" class="form-control" [(ngModel)]="bookName" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="brandId">Katagori</label>
+            <div class="form-group">
+              <input type="number" id="categoryId" formControlName="categoryId" class="form-control" [(ngModel)]="categoryId" />
+              <select type="number" id="cotegoryId" class="form-select" aria-label="Kategori secimi"
+                formControlName="categoryId">
+                <option value="" disabled selected>Seçiniz..</option>
+                <option *ngFor="let category of categories" [ngValue]="category.categoryId">{{category.categoryId}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="yearOfPrinting">Basım yılı</label>
+            <div class="form-group">
+              <input type="number" id="yearOfPrinting" formControlName="yearOfPrinting" class="form-control"
+                [(ngModel)]="yearOfPrinting" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="piece">Kitap Adedi</label>
+            <div class="form-group">
+              <input type="number" id="piece" formControlName="piece" class="form-control"
+                [(ngModel)]="piece" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="author">Yazar Adı</label>
+            <div class="form-group">
+              <input type="text" id="author" formControlName="author" class="form-control" [(ngModel)]="author" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="publisher">Yayın Evi</label>
+            <div class="form-group">
+              <input type="text" id="publisher" formformControlName="publisher" class="form-control"
+                [(ngModel)]="publisher" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="fuelType">Kitap Türü</label>
+            <div class="form-group">
+              <input type="text" id="kindName" formControlName="kindName" class="form-control" [(ngModel)]="kindName" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description">Açıklama</label>
+            <div class="form-group">
+              <input type="text" id="description" formControlName="description" class="form-control"
+                [(ngModel)]="description" />
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-dark" (click)="backToList()">Geri dön</button>
+        <button class="btn btn-fill btn-success" (click)="update()" style="float: right;">Güncelle</button>
+      </div>
+    </div>
+  </div>
+</div>

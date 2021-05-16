@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Kind } from 'src/app/models/kind';
+import { KindService } from 'src/app/services/kind.service';
 
 @Component({
   selector: 'app-kind',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KindComponent implements OnInit {
 
-  constructor() { }
+  kinds:Kind[]=[];
+
+
+
+  constructor(private kindService: KindService) { }
 
   ngOnInit(): void {
+    this.getKinds();
+  }
+
+  getKinds(){
+    this.kindService.getKinds().subscribe(response=>{
+      this.kinds = response.data;
+
+    })
   }
 
 }

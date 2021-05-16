@@ -5,6 +5,7 @@ export interface Book{
   bookName : string;
   author : string;
   publisher : string;
-  yearOfPrinting : string;
+  yearOfPrinting : number;
+  piece:number;
   description : string;
 }

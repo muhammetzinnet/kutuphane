@@ -1,1 +1,10 @@
-<p>lend works!</p>
+<ul class="list-group">
+  <li class="list-group-item bg-dark cursor-pointer btn-toggle collapsed" data-bs-toggle="collapse"
+    data-bs-target="#lends-collapse" aria-expanded="true">
+    <span style="color: white;">Kitap Türleri</span>
+    <span style="color: black;" class="badge bg-light total">{{lends.length}}</span></li>
+  <div class="collapse show" id="brands-collapse">
+    <li *ngFor="let lend of lends" class="list-group-item cursor-pointer outline-none shadow-none">
+      <a style="color: black; text-decoration: none;" href="/books/lend/{{lend.lendId}}">{{lend.lendId}}</a></li>
+  </div>
+</ul>

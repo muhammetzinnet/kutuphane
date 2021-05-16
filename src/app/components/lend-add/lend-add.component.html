@@ -1,0 +1,36 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 *ngIf="book" class="modal-title" id="exampleModalLabel">
+          {{book.kindName}} {{book.bookName}} | Kitabı al
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="form-group row mb-2">
+        <label for="example-date-input" class="col-4 col-form-label">Kitabı alan </label>
+        <div class="col-8">
+          <input type="text" disabled="disabled" class="form-control" [value]=user.firstName+user.lastName />
+        </div>
+        <div class="form-group row mb-2">
+          <label for="example-date-input" class="col-4 col-form-label">Kıtabın Alındığı zaman</label>
+          <div class="col-8">
+            <input  placeholder="Bir gün seçiniz." />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-date-input" class="col-4 col-form-label">Bitiş</label>
+          <div class="col-8">
+            <input  placeholder="Bir gün seçiniz." />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Kapat
+          </button>
+          <button *ngIf="book" (click)="addLend()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Kitabı
+            al</button>
+        </div>
+      </div>
+    </div>
+  </div>

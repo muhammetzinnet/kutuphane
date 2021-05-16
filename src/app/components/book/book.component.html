@@ -21,6 +21,7 @@
       <th scope="col">Yazar Adı</th>
       <th scope="col">Yayın Evi</th>
       <th scope="col">Yayın Tarihi</th>
+      <th scope="col">Kitap Adedi</th>
       <th scope="col">Açıklama</th>
       <th></th>
     </tr>
@@ -34,9 +35,10 @@
       <td>{{book.author | uppercase}}</td>
       <td>{{book.publisher | uppercase}}</td>
       <td>{{book.yearOfPrinting}}</td>
+      <td>{{book.piece}}</td>
       <td>{{book.description | uppercase}}</td>
       <td><button (click)="addLendPerson(book)"
-        type="button" class="btn btn-info">Seç</button></td>
+        type="button" class="btn btn-info" >Seç</button></td>
     </tr>
   </tbody>
 </table>

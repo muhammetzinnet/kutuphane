@@ -1,26 +1,68 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="login">Kütüphane</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+          <a class="nav-link active" aria-current="page" href="books">Anasayfa</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" >Link</a>
-        </li>
-        <app-book-summary></app-book-summary>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Kitap Türleri
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li *ngFor="let kind of kinds">
+              <a class="dropdown-item" href="/books/kind/{{kind.kindId}}">{{kind.kindName}}</a></li>
+          </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-3" type="search" placeholder="Search" aria-label="ara">
-        <button class="btn btn-outline-success" type="submit">Ara</button>
-      </form>
+      <ul *ngIf="checkToLogin()==false" class="navbar-nav" style="float: right;">
+        <li class="nav-item">
+          <a class="nav-link active" href="login"><i class="fas fa-sign-in-alt" style="font-size: small;"></i> Giriş
+            yap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="register">Kayıt ol</a>
+        </li>
+      </ul>
+      <ul *ngIf="checkToEmail()==true" class="navbar-nav" style="float: right;">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="login" id="navbarDropdownn" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            YÖNETİM
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownn">
+            <li><a class="dropdown-item" href="/books/list">Kitapları Listele</a></li>
+            <li><a class="dropdown-item" href="/categories/list">Kategorileri listele</a></li>
+            <li><a class="dropdown-item" href="/kinds/list">Kitap Türlerini listele</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownn" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{this.user.firstName}} {{this.user.lastName}}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownn">
+            <li>
+              <a class="dropdown-item" href="profil">Profil düzenle</a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a (click)="logOut()" class="dropdown-item">Çıkış yap</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
     </div>
+
   </div>
 </nav>

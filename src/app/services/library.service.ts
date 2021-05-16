@@ -23,7 +23,7 @@ export class LibraryService {
 
   removeFromBook(book: Book) {
     let item = BookItems.find((b) => b.book.bookId === book.bookId);
-    BookItems.splice(BookItems.indexOf(item),1);
+    BookItems.splice(BookItems.indexOf(item), 1);
   }
 
   list(): BookItem[] {
