@@ -10,6 +10,7 @@ import { SingleResponseModel } from '../models/singleResponseModel';
   providedIn: 'root',
 })
 export class BookService {
+
   apiUrl = 'https://localhost:44335/api/';
   constructor(private httpClient: HttpClient) {}
 
