@@ -11,10 +11,10 @@ import { BookService } from 'src/app/services/book.service';
   styleUrls: ['./book-delete.component.css'],
 })
 export class BookDeleteComponent implements OnInit {
-  
+
   bookDeleteForm: FormGroup;
   book: Book;
-  id: number;
+  bookId: number;
   bookName: string;
 
   constructor(
@@ -27,8 +27,8 @@ export class BookDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['id']) {
-        this.getBookDetailsByBookId(params['id']);
+      if (params['bookid']) {
+        this.getBookDetailsByBookId(params['bookid']);
         this.createBookForm();
       }
     });
@@ -36,17 +36,18 @@ export class BookDeleteComponent implements OnInit {
 
   getBookDetailsByBookId(id: number) {
     this.bookService
-      .getBookDetailsByBookIdSingle(this.activatedRoute.snapshot.params['id'])
+      .getBookDetailsByBookIdSingle(this.activatedRoute.snapshot.params['bookid'])
       .subscribe((response) => {
         this.book = response.data;
-        this.id = this.book.bookId;
+        this.bookId = this.book.bookId;
         this.bookName = this.book.bookName;
       });
   }
 
   createBookForm() {
     this.bookDeleteForm = this.formBuilder.group({
-      id: ['', Validators.required],
+      bookId: ['', Validators.required],
+      bookName:['', Validators.required]
     });
   }
 

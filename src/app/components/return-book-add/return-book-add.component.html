@@ -11,22 +11,22 @@
     <div class="form-group row mb-2">
       <label for="example-date-input" class="col-4 col-form-label">Başlangıç Tarihi</label>
       <div class="col-8">
-        <input  min="{{ getRentMinDate() }}" [(ngModel)]="lendDate" type="date"
-          class="form-control" id="lend-date" placeholder="Bir gün seçiniz." />
+        <input min="{{ getRentMinDate() }}" [(ngModel)]="lendDate" type="date" class="form-control" id="lend-date"
+          placeholder="Bir gün seçiniz." />
       </div>
     </div>
     <div class="form-group row">
       <label for="example-date-input" class="col-4 col-form-label">Bitiş</label>
       <div class="col-8">
         <input disabled="{{ !firstDateSelected }}" min="{{ getReturnMinDate() }}" max="{{ getReturnMaxDate() }}"
-          [(ngModel)]="returnBookDate" type="date" class="form-control" id="return-date" placeholder="Bir gün seçiniz." />
+          [(ngModel)]="returnBookDate" type="date" class="form-control" id="return-date"
+          placeholder="Bir gün seçiniz." />
       </div>
     </div>
     <div *ngIf="returnBookDate" class="form-group row mb-2 mt-2">
       <label for="example-date-input" class="col-4 col-form-label">Toplam gün sayısı</label>
       <div class="col-8">
-        <input *ngIf="book" type="text" disabled="disabled" class="form-control"
-          value="{{returnBook.lendPeriod}}" />
+        <input *ngIf="book" type="text" disabled="disabled" class="form-control" value="{{returnBook.lendPeriod}}" />
       </div>
     </div>
     <div class="modal-footer">

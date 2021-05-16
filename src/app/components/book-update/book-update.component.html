@@ -20,12 +20,8 @@
           <div class="mb-3">
             <label for="brandId">Katagori</label>
             <div class="form-group">
-              <input type="number" id="categoryId" formControlName="categoryId" class="form-control" [(ngModel)]="categoryId" />
-              <select type="number" id="cotegoryId" class="form-select" aria-label="Kategori secimi"
-                formControlName="categoryId">
-                <option value="" disabled selected>Seçiniz..</option>
-                <option *ngFor="let category of categories" [ngValue]="category.categoryId">{{category.categoryId}}</option>
-              </select>
+              <input type="number" id="categoryId" formControlName="categoryId" class="form-control"
+                [(ngModel)]="categoryId" />
             </div>
           </div>
           <div class="mb-3">
@@ -38,8 +34,7 @@
           <div class="mb-3">
             <label for="piece">Kitap Adedi</label>
             <div class="form-group">
-              <input type="number" id="piece" formControlName="piece" class="form-control"
-                [(ngModel)]="piece" />
+              <input type="number" id="piece" formControlName="piece" class="form-control" [(ngModel)]="piece" />
             </div>
           </div>
           <div class="mb-3">

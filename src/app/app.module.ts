@@ -20,7 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { KindComponent } from './components/kind/kind.component';
 import { LendComponent } from './components/lend/lend.component';
-import { ReturnbookComponent } from './components/returnbook/returnbook.component';
+
 import { BookDeleteComponent } from './components/book-delete/book-delete.component';
 import { BookUpdateComponent } from './components/book-update/book-update.component';
 import { KindAddComponent } from './components/kind-add/kind-add.component';
@@ -36,8 +36,10 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ReturnbookAddComponent } from './components/returnbook-add/returnbook-add.component';
+
 import { CustomerComponent } from './components/customer/customer.component';
+import { ReturnBookComponent } from './components/return-book/return-book.component';
+import { ReturnBookAddComponent } from './components/return-book-add/return-book-add.component';
 
 
 
@@ -54,7 +56,7 @@ import { CustomerComponent } from './components/customer/customer.component';
     LoginComponent,
     KindComponent,
     LendComponent,
-    ReturnbookComponent,
+
     BookDeleteComponent,
     BookUpdateComponent,
     KindAddComponent,
@@ -70,8 +72,10 @@ import { CustomerComponent } from './components/customer/customer.component';
     FooterComponent,
     ProfilComponent,
     RegisterComponent,
-    ReturnbookAddComponent,
-    CustomerComponent
+    
+    CustomerComponent,
+    ReturnBookComponent,
+    ReturnBookAddComponent,
 
 
   ],

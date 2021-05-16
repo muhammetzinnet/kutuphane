@@ -27,7 +27,7 @@ export class BookUpdateComponent implements OnInit {
   bookName: string;
   author: string;
   publisher: string;
-  yearOfPrinting: number;
+  yearOfPrinting: Date;
   piece: number;
   description: string;
 
@@ -88,7 +88,7 @@ export class BookUpdateComponent implements OnInit {
         this.kindName = this.book.kindName;
         this.author = this.book.author;
         this.publisher = this.book.publisher;
-        this.yearOfPrinting= this.book.yearOfPrinting;
+        this.yearOfPrinting = this.book.yearOfPrinting;
         this.piece = this.book.piece;
         this.description = this.book.description;
       });

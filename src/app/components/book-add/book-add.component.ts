@@ -36,6 +36,7 @@ export class BookAddComponent implements OnInit {
       author: ['', Validators.required],
       publisher: ['', Validators.required],
       yearOfPrinting: ['', Validators.required],
+      piece: ['', Validators.required],
       description: ['', Validators.required],
     });
   }

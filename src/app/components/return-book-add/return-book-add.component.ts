@@ -1,24 +1,23 @@
-import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { BookService } from 'src/app/services/book.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
+import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { Customer } from 'src/app/models/customer';
 import { ResponseModel } from 'src/app/models/responseModel';
 import { ReturnBook } from 'src/app/models/returnBook';
-import { User } from 'src/app/models/user';
-import { BookService } from 'src/app/services/book.service';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
-
 import { ReturnBookService } from 'src/app/services/return-book.service';
+import { DatePipe } from '@angular/common';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-returnbook-add',
-  templateUrl: './returnbook-add.component.html',
-  styleUrls: ['./returnbook-add.component.css'],
+  selector: 'app-return-book-add',
+  templateUrl: './return-book-add.component.html',
+  styleUrls: ['./return-book-add.component.css']
 })
-export class ReturnbookAddComponent implements OnInit {
+export class ReturnBookAddComponent implements OnInit {
   book: Book;
   customers: Customer[] = [];
   lendDate: Date;

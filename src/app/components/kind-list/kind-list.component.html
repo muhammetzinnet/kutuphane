@@ -3,7 +3,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Kitap Türü</th>
-      <th scope="col"><button class="btn btn-success" click="routerLink" routerLink="add">Kitap Türü Ekle</button></th>
+      <th scope="col"><button class="btn btn-success" href="books/add" click="routerLink" routerLink="/kinds/add">Kitap Türü Ekle</button></th>
     </tr>
   </thead>
   <tbody>
@@ -11,8 +11,8 @@
       <th scope="row">{{kind.kindId}}</th>
       <td>{{kind.kindName}}</td>
       <td>
-        <button class="btn btn-warning" click="routerLink" routerLink = "update">Güncelle</button>
-        <button class="btn btn-danger mx-2" click="routerLink" routerLink="delete">Sil</button>
+        <button class="btn btn-warning" href="kinds/update" click="routerLink" routerLink = "/kinds/update">Güncelle</button>
+        <button class="btn btn-danger mx-2" href="kinds/delete" click="routerLink" routerLink="/kinds/delete">Sil</button>
       </td>
     </tr>
   </tbody>
