@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LibraryService } from 'src/app/services/library.service';
+
 
 @Component({
   selector: 'app-book',
@@ -19,7 +19,7 @@ export class BookComponent implements OnInit {
     private bookService: BookService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private libraryService: LibraryService
+
   ) {}
 
   ngOnInit(): void {
@@ -50,11 +50,11 @@ export class BookComponent implements OnInit {
   }
 
   addLendPerson(book: Book) {
-    if (book.bookId == book.bookId) {
+    if (book.bookId!=book.bookId) {
       this.toastrService.success('Aynı kitaptan birdaha eklenemez');
     } else {
       this.toastrService.success('Kitap kişiye verildi', book.bookName);
-      this.libraryService.addToBook(book);
+
     }
   }
 

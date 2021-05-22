@@ -42,7 +42,7 @@ export class BookService {
   }
 
   add(book: Book): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'books/add', book);
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'books/add', book)
   }
 
   delete(book: Book): Observable<ResponseModel> {

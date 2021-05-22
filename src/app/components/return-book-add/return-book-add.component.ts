@@ -1,15 +1,13 @@
-import { BookService } from 'src/app/services/book.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/models/user';
+import { ResponseModel } from './../../models/responseModel';
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { Customer } from 'src/app/models/customer';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { User } from 'src/app/models/user';
 import { ReturnBook } from 'src/app/models/returnBook';
-import { ReturnBookService } from 'src/app/services/return-book.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -18,6 +16,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./return-book-add.component.css']
 })
 export class ReturnBookAddComponent implements OnInit {
+
   book: Book;
   customers: Customer[] = [];
   lendDate: Date;
@@ -27,7 +26,7 @@ export class ReturnBookAddComponent implements OnInit {
   firstDateSelected: boolean = false;
   dateAvailable: ResponseModel;
   user: User = new User();
-  email = this.localStorageService.get('email');
+
   returnBook: ReturnBook = {
     bookId: 0,
     returnBookId: 0,
@@ -39,26 +38,16 @@ export class ReturnBookAddComponent implements OnInit {
   };
 
   constructor(
-    private returnBookService: ReturnBookService,
     private toastrService: ToastrService,
     private router: Router,
-    private bookService: BookService,
     private datePipe: DatePipe,
-    private activatedRoute: ActivatedRoute,
-    private localStorageService: LocalStorageService,
     private userService: UserService
   ) {}
   ngOnInit(): void {
-    this.getEmail();
+    
   }
 
-  getEmail() {
-    if (this.email) {
-      this.userService.getByEmail(this.email).subscribe((response) => {
-        this.user = response;
-      });
-    }
-  }
+
 
   getRentMinDate() {
     this.minDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
@@ -97,5 +86,6 @@ export class ReturnBookAddComponent implements OnInit {
   selectBookId(){
     return this.book.bookId
   }
+
 
 }

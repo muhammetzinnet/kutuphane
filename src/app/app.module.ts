@@ -14,11 +14,10 @@ import { NaviComponent } from './components/navi/navi.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
-import { BookSummaryComponent } from './components/book-summary/book-summary.component';
+
 import { BookAddComponent } from './components/book-add/book-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { KindComponent } from './components/kind/kind.component';
 import { LendComponent } from './components/lend/lend.component';
 
 import { BookDeleteComponent } from './components/book-delete/book-delete.component';
@@ -44,6 +43,8 @@ import { ReturnBookAddComponent } from './components/return-book-add/return-book
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,12 +52,11 @@ import { ReturnBookAddComponent } from './components/return-book-add/return-book
     CategoryComponent,
     NaviComponent,
     FilterPipePipe,
-    BookSummaryComponent,
+   
     BookAddComponent,
     LoginComponent,
-    KindComponent,
-    LendComponent,
 
+    LendComponent,
     BookDeleteComponent,
     BookUpdateComponent,
     KindAddComponent,
@@ -72,7 +72,6 @@ import { ReturnBookAddComponent } from './components/return-book-add/return-book
     FooterComponent,
     ProfilComponent,
     RegisterComponent,
-    
     CustomerComponent,
     ReturnBookComponent,
     ReturnBookAddComponent,

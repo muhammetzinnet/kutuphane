@@ -4,7 +4,7 @@ import { LoginModel } from '../models/loginModel';
 import { HttpClient } from '@angular/common/http';
 import { TokenModel } from '../models/tokenModel';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { LocalStorageService } from './local-storage.service';
+
 import { Observable } from 'rxjs';
 import { ResponseModel } from '../models/responseModel';
 import { Register } from '../models/register';
@@ -18,7 +18,7 @@ export class AuthService {
   apiUrl = 'https://localhost:44335/api/auth/';
   constructor(
     private httpClient: HttpClient,
-    private storageService: LocalStorageService
+
   ) {}
 
   login(loginModel: LoginModel) {
@@ -56,7 +56,7 @@ export class AuthService {
   }
   getDecodedToken() {
     try {
-      return this.jwtHelperService.decodeToken(this.storageService.getToken());
+      return this.jwtHelperService.decodeToken();
     } catch (Error) {
       return null;
     }
@@ -68,7 +68,7 @@ export class AuthService {
   }
   loggedIn(): boolean {
     let isExpired = this.jwtHelperService.isTokenExpired(
-      this.storageService.getToken()
+
     );
     return !isExpired;
   }

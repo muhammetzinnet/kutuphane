@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BookService } from 'src/app/services/book.service';
 
@@ -21,7 +22,8 @@ export class BookAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private bookService: BookService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -42,25 +44,17 @@ export class BookAddComponent implements OnInit {
   }
 
   add() {
+
     if (this.bookAddForm.valid) {
-      let bookModel = Object.assign({}, this.bookAddForm.value);
-      this.bookService.add(bookModel).subscribe(
-        (response) => {
-          this.toastrService.success(response.message + 'Başarılı');
-        },
-        (responseError) => {
-          if (responseError.error.length > 0) {
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.Errors[i].ErrorMessage,
-                'Doğrulama hatası'
-              );
-            }
-          }
-        }
-      );
-    } else {
-      this.toastrService.error('Hatalı İşlem!', 'Lütfen kontrol edin...');
+      let bookModel = Object.assign({}, this.bookAddForm.value)
+      this.bookService.add(bookModel).subscribe(response=>{
+        this.toastrService.success(response.message,"Başarılı")
+      },responsError=>{
+        this.toastrService.error(responsError.error)
+      })
+
+    }else{
+      this.toastrService.error("Formunuz eksik","Dikkat")
     }
   }
 }

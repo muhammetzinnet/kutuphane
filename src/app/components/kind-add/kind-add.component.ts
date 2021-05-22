@@ -31,7 +31,7 @@ export class KindAddComponent implements OnInit {
     if (this.kindAddForm.valid){
       let bookKind = Object.assign({}, this.kindAddForm.value)
       this.kindService.add(bookKind).subscribe(response=>{
-        this.toastrService.success("Kitap türü eklendi","Başarılı")
+        this.toastrService.success(response.message,"Başarılı")
         this.backToList();
       }, responseError=>{
         if(responseError.error.Errors.length>0){

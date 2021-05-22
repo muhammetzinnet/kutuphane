@@ -1,9 +1,0 @@
-<ul class="list">
-  <li class="list-group" data-bs-toggle="" data-bs-target="#kinds-collapse" aria-expanded="true">
-    <span style="color: white;">Kitap Türleri</span>
-    <div class="collapse show" id="kinds-collapse">
-  <li *ngFor="let kind of kinds" class="list-group-item cursor-pointer outline-none shadow-none">
-    <a style="color: black; text-decoration: none;"
-      routerLink="/kinds/list" routerLinkActive="router-link-active" >{{kind.kindId}}||{{kind.kindName}}</a></li>
-  </div>
-</ul>

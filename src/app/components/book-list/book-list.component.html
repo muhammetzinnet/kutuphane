@@ -1,32 +1,33 @@
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
-      <th scope="col">Kitap ID No</th>
-      <th scope="col">Katagori</th>
-      <th scope="col">Kitap adı</th>
+      <th scope="col">Id</th>
+      <th scope="col">Kategori</th>
       <th scope="col">Kitap Türü</th>
-      <th scope="col">Yazar adı</th>
-      <th scope="col">Yayın evi</th>
-      <th scope="col">Basım tarihi</th>
-      <th scope="col">Adet</th>
+      <th scope="col">Kitap Adı</th>
+      <th scope="col">Yazar Adı</th>
+      <th scope="col">Yayın Evi</th>
+      <th scope="col">Yayın Tarihi</th>
+      <th scope="col">Kitap Adedi</th>
       <th scope="col">Açıklama</th>
-      <th scope="col"><button class="btn btn-success" click="routerLink" routerLink="/books/add" >Kitap Ekle</button></th>
+      <th scope="col">Kitap Listesi</th>
+      <th scope="col"><button class="btn btn-success" click="routerLink" routerLink="/book/add">Kitap Ekle</button></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let book of books">
-      <th scope="row">{{book.bookId}}</th>
+      <td>{{book.bookId}}</td>
       <td>{{book.categoryId}}</td>
-      <td>{{book.bookName}}</td>
-      <td>{{book.kindName}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.publisher}}</td>
+      <td>{{book.kindName | uppercase}}</td>
+      <td>{{book.bookName | uppercase}}</td>
+      <td>{{book.author | uppercase}}</td>
+      <td>{{book.publisher | uppercase}}</td>
       <td>{{book.yearOfPrinting}}</td>
       <td>{{book.piece}}</td>
-      <td>{{book.description}}</td>
+      <td>{{book.description | uppercase}}</td>
       <td>
-        <button class="btn btn-warning" click="routerLink" routerLink="update/{{book.bookId}}">Güncelle</button>
-        <button class="btn btn-danger" click="routerLink" routerLink="delete/{{book.bookId}}">Sil</button>
+        <button class="btn btn-warning" click="routerLink" routerLink="/categories/update/">Güncelle</button>
+        <button class="btn btn-danger mx-2" click="routerLink" routerLink="/categories/delete/">Sil</button>
       </td>
     </tr>
   </tbody>

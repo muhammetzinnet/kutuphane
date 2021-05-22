@@ -1,22 +1,22 @@
 <div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading... </span>
+  <span class="visually-hidden">Loading... </span>
 <table class="table container">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Üyenin Adı</th>
-            <th>Üyenin Soyadı</th>
-            <th>Kitabın kişide kaldı süre</th>
-            <th>Kitabı iade ettiği tarih</th>
-            <th>Toplam gün</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let returnBook of returnBooks">
-        <td>{{returnBook.returnBookId}}</td>
-        <td>{{returnBook.firstName}}</td>
-        <td>{{returnBook.lastName}}</td>
-        <td>{{returnBook.lendPeriod}}</td>
-        <td>{{returnBook.returnDate}}</td>
-        <td>{{returnBook.totalDay}}</td>
-    </tr>
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Üyenin Adı</th>
+          <th>Üyenin Soyadı</th>
+          <th>Kitabın kişide kaldı süre</th>
+          <th>Kitabı iade ettiği tarih</th>
+          <th>Toplam gün</th>
+      </tr>
+  </thead>
+  <tr *ngFor="let returnBook of returnBooks">
+      <td>{{returnBook.returnBookId}}</td>
+      <td>{{returnBook.firstName}}</td>
+      <td>{{returnBook.lastName}}</td>
+      <td>{{returnBook.lendPeriod}}</td>
+      <td>{{returnBook.returnDate}}</td>
+      <td>{{returnBook.totalDay}}</td>
+  </tr>
 </table>

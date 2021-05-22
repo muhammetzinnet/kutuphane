@@ -27,8 +27,8 @@ export class KindDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['id']) {
-        this.getByKindId(params['id']);
+      if (params['kindid']) {
+        this.getByKindId(params['kindid']);
         this.createKindForm();
       }
     });

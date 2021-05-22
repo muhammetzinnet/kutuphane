@@ -30,16 +30,16 @@
           <a class="nav-link active" href="register">Kayıt ol</a>
         </li>
       </ul>
-      <ul *ngIf="checkToEmail()==true" class="navbar-nav" style="float: right;">
+      <ul  class="navbar-nav" style="float: right;">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="login" id="navbarDropdownn" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             YÖNETİM
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownn">
-            <li><a class="dropdown-item" href="/books/list">Kitapları Listele</a></li>
-            <li><a class="dropdown-item" href="/categories/list">Kategorileri listele</a></li>
-            <li><a class="dropdown-item" href="/kinds/list">Kitap Türlerini listele</a></li>
+            <li><a class="dropdown-item"  routerLink="/books/list">Kitapları Listele</a></li>
+            <li><a class="dropdown-item"  routerLink="/categories/list">Kategorileri listele</a></li>
+            <li><a class="dropdown-item"  routerLink="/kinds/list">Kitap Türlerini listele</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -56,7 +56,7 @@
               <hr class="dropdown-divider" />
             </li>
             <li>
-              <a (click)="logOut()" class="dropdown-item">Çıkış yap</a>
+              <a  class="dropdown-item">Çıkış yap</a>
             </li>
           </ul>
         </li>

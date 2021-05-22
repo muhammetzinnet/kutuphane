@@ -32,27 +32,23 @@ export class CategoryAddComponent implements OnInit {
   }
 
   add(){
-    if(this.categoryAddForm.valid){
-      let categoryModel = Object.assign({},this.categoryAddForm.value)
+    if (this.categoryAddForm.valid){
+      let categoryModel = Object.assign({}, this.categoryAddForm.value)
       this.categoryService.add(categoryModel).subscribe(response=>{
-        this.toastrService.success("Kategori eklendi","Başarılı")
+        this.toastrService.success(response.message,"Başarılı")
         this.backToList();
-      },responseError=>{
+      }, responseError=>{
         if(responseError.error.Errors.length>0){
-          for (let i = 0; i <responseError.error.Errors.length; i++) {
-                   this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası")
-                   console.log(responseError.error.Errors[i].ErrorMessage);
-
+          for(let i=0; i<responseError.errors.Errors.length; i++){
+            this.toastrService.error(responseError.error.Errors[i].errorMessage,"Doğrulama hatası");
+          }
         }
-      }
-    })
-
+      })
     }else{
       this.toastrService.error("Formunuz eksik","Dikkat")
     }
-
   }
   backToList(){
-    this.router.navigate(["categories/list"]);
+    this.router.navigate(['kinds/list']);
   }
 }

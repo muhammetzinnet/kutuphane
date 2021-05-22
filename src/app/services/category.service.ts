@@ -11,7 +11,7 @@ import { SingleResponseModel } from '../models/singleResponseModel';
 })
 export class CategoryService {
 
-  apiUrl = 'https://localhost:44335/api/categories/getall';
+  apiUrl = 'https://localhost:44335/api/';
   constructor(private httpClient: HttpClient) {}
 
   getCategories(): Observable<ListResponseModel<Category>> {

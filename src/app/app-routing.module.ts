@@ -13,7 +13,6 @@ import { CategoryAddComponent } from './components/category-add/category-add.com
 import { CategoryDeleteComponent } from './components/category-delete/category-delete.component';
 import { CategoryUpdateComponent } from './components/category-update/category-update.component';
 import { CustomerComponent } from './components/customer/customer.component';
-import { KindComponent } from './components/kind/kind.component';
 import { KindAddComponent } from './components/kind-add/kind-add.component';
 import { KindDeleteComponent } from './components/kind-delete/kind-delete.component';
 import { KindUpdateComponent } from './components/kind-update/kind-update.component';
@@ -21,9 +20,9 @@ import { KindListComponent } from './components/kind-list/kind-list.component';
 import { LendComponent } from './components/lend/lend.component';
 import { LendAddComponent } from './components/lend-add/lend-add.component';
 import { ReturnBookComponent } from './components/return-book/return-book.component';
-import { ReturnBookAddComponent } from './components/return-book-add/return-book-add.component';
 import { BookUpdateComponent } from './components/book-update/book-update.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
+import { ReturnBookAddComponent } from './components/return-book-add/return-book-add.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: BookComponent },
@@ -40,7 +39,11 @@ const routes: Routes = [
     component: BookListComponent,
     canActivate: [LoginGuard],
   },
-  {path:'books/update', component:BookUpdateComponent, canActivate: [LoginGuard]},
+  {
+    path: 'books/update',
+    component: BookUpdateComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: 'categories',
     component: CategoryComponent,
@@ -61,9 +64,13 @@ const routes: Routes = [
     component: CategoryUpdateComponent,
     canActivate: [LoginGuard],
   },
-  {path:'categories/list', component: CategoryListComponent, canActivate: [LoginGuard]},
+  {
+    path: 'categories/list',
+    component: CategoryListComponent,
+    canActivate: [LoginGuard],
+  },
   { path: 'customer', component: CustomerComponent, canActivate: [LoginGuard] },
-  { path: 'kinds', component: KindComponent, canActivate: [LoginGuard] },
+
   { path: 'kinds/add', component: KindAddComponent, canActivate: [LoginGuard] },
   {
     path: 'kinds/delete',
@@ -83,16 +90,9 @@ const routes: Routes = [
   { path: 'lends', component: LendComponent, canActivate: [LoginGuard] },
   { path: 'lends/add', component: LendAddComponent, canActivate: [LoginGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [LoginGuard] },
-  {
-    path: 'returnbooks',
-    component: ReturnBookComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'returnbooks/add',
-    component: ReturnBookAddComponent,
-    canActivate: [LoginGuard],
-  },
+  { path:'returnbooks', component: ReturnBookComponent, canActivate: [LoginGuard]},
+  { path:'returnbooks/add', component: ReturnBookAddComponent, canActivate: [LoginGuard]},
+
 
   { path: 'profil', component: ProfilComponent },
 

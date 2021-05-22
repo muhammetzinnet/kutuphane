@@ -8,8 +8,7 @@ import { Lend } from 'src/app/models/lend';
 import { User } from 'src/app/models/user';
 import { BookService } from 'src/app/services/book.service';
 import { CustomerService } from 'src/app/services/customer.service';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { UserService } from 'src/app/services/user.service';
+
 
 
 @Component({
@@ -29,7 +28,7 @@ export class LendAddComponent implements OnInit {
   maxDate: string | null;
   firstDateSelected: boolean = false;
   user:User= new User();
-  email = this.localStorageService.get("email");
+
   lend: Lend = {
   lendId:0,
   customerId:0,
@@ -53,14 +52,11 @@ export class LendAddComponent implements OnInit {
     private datePipe: DatePipe,
     private toastrService : ToastrService,
     private activatedRoute:ActivatedRoute,
-    private router:Router,
-    private localStorageService: LocalStorageService,
-    private userService:UserService
-  ) {}
+    private router:Router  ) {}
 
   ngOnInit(): void {
 
-    this.getEmail();
+
     this.activatedRoute.params.subscribe(params => {
         this.getBookDetailsByBookId(params["bookId"])
         this.getCustomers();
@@ -98,11 +94,5 @@ export class LendAddComponent implements OnInit {
     console.log(customerId);
   }
 
-  getEmail(){
-    if(this.email){
-      this.userService.getByEmail(this.email).subscribe(response=>{
-        this.user = response;
-      })
-    }
-  }
+
 }
